@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AHN MIN QYU</title>
+    <!-- Noto Sans KR 폰트 (얇은 스타일 포함) -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* 기본 리셋 */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Noto Sans KR", sans-serif;
+        font-weight: 300;
+      }
+      /* Hero 섹션 */
+      .hero {
+        position: relative;
+        height: 150vh; /* 화면보다 크게 하여 스크롤 시 이미지 하단이 보임 */
+        background: url("img/image.png") no-repeat center center;
+        background-size: cover;
+        animation: bgPan 10s ease-in-out infinite;
+      }
+      .hero-text {
+        position: absolute;
+        top: 50vh;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #fff;
+        z-index: 2;
+      }
+      .hero-text h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 0.3em; /* 글자 간격 넓게 */
+        margin-bottom: 0.5rem;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+        animation: textFloat 4s ease-in-out infinite;
+      }
+      .hero-text p {
+        font-size: 1.5rem;
+        opacity: 0.8;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.7);
+        animation: textFloat 4s ease-in-out infinite;
+      }
+      /* 프로필 섹션 (패딩 2배 확장) */
+      .profile-section {
+        background: linear-gradient(135deg, #87ceeb, #32cd32);
+        color: #fff;
+        padding: 12rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .profile-container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+      }
+      .profile-image {
+        flex: 1;
+        min-width: 300px;
+        padding: 1rem;
+        text-align: center;
+      }
+      .profile-image img {
+        width: 100%;
+        max-width: 300px;
+        border-radius: 8px;
+        object-fit: cover;
+        /* 기존 테두리 제거 */
+        /* border: 5px solid #fff; */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        animation: imageSlide 4s ease-in-out infinite;
+      }
+      .profile-description {
+        flex: 2;
+        padding: 1rem;
+        min-width: 300px;
+      }
+      .profile-description h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+      }
+      .profile-description p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+      }
+      /* 지도 섹션 */
+      .map-section {
+        padding: 4rem 1rem;
+        background: #fff;
+        color: #000;
+        text-align: center;
+      }
+      .map-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .map-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto 2rem;
+      }
+      .map-container iframe {
+        width: 100%;
+        height: 450px;
+        border: 0;
+      }
+      /* 최종 마무리 섹션 */
+      .final-section {
+        background: linear-gradient(135deg, #87ceeb, #32cd32);
+        color: #fff;
+        padding: 6rem 1rem;
+        text-align: center;
+      }
+      .final-section h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      .final-section p {
+        font-size: 1.2rem;
+        line-height: 1.6;
+        margin-bottom: 1rem;
+      }
+      /* 반응형 디자인 */
+      @media (max-width: 768px) {
+        .hero-text h1 {
+          font-size: 3rem;
+        }
+        .hero-text p {
+          font-size: 1.2rem;
+        }
+        .profile-section {
+          flex-direction: column;
+          padding: 8rem 1rem;
+        }
+      }
+      /* 애니메이션 keyframes */
+      @keyframes bgPan {
+        0% {
+          background-position: center;
+        }
+        50% {
+          background-position: 55% center;
+        }
+        100% {
+          background-position: center;
+        }
+      }
+      @keyframes textFloat {
+        0% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-40px);
+        }
+        100% {
+          transform: translateY(0);
+        }
+      }
+      @keyframes imageSlide {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(15px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Hero 섹션 -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>AHN MIN QYU</h1>
+        <br />
+        <p>국민의힘 청년대표 안민규</p>
+      </div>
+    </section>
+
+    <!-- 프로필 섹션 -->
+    <section class="profile-section">
+      <div class="profile-container">
+        <div class="profile-image">
+          <img src="img/image2.png" alt="안민규 사진" />
+        </div>
+        <div class="profile-description">
+          <h2>About 안민규</h2>
+          <p>
+            강원도 원주시 진광고등학교를 졸업한 안민규는 원주시 9급 토목직
+            공무원으로서의 기량을 발휘하며 지역사회에 기여했습니다. 그러나 그의
+            도전 정신은 여기서 멈추지 않았습니다. 투철한 의지와 혁신적 비전으로
+            국민의힘 청년대표의 자리까지 도약하였으며, 윤석열 대통령의 신뢰를
+            받는 ‘키즈’로 불리며 미래의 리더로서 거대한 업적을 이루어가고
+            있습니다. 그것의 대한 보답일까요? 안민규는 국민의힘 원주시
+            청년대표로써 강원도 원주시를 대표하는 차세대 의원으로 많은 사람들의
+            이목을 받고 있습니다 그의 성장은 그누구도 막지 못할 것 입니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 지도 섹션 -->
+    <section class="map-section">
+      <h2>야차룰 현피 뜨는 곳</h2>
+      <h4>찾아오시는 길</h4>
+      <br /><br /><br />
+      <p>강원도 원주시 우무개로 185</p>
+      <br /><br /><br /><br /><br /><br />
+      <div class="map-container">
+        <iframe
+          src="https://maps.google.com/maps?q=%EA%B0%95%EC%9B%90%EB%8F%84%20%EC%9B%90%EC%A3%BC%EC%8B%9C%20%EC%9A%B0%EB%AC%B4%EA%B0%80%EB%A1%9C%20185&z=15&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+      <br /><br /><br /><br />
+      <h2>민원 존나 넣는 곳</h2>
+      <h4>하루 100건 까지 가능</h4>
+      <br /><br />
+      <p>강원 원주시 북원로 106 귀래면사무소</p>
+      <br />
+      <p>9급 주무관 안민규</p>
+      <br /><br /><br />
+      <div class="map-container">
+        <iframe
+          src="https://maps.google.com/maps?q=%EA%B0%95%EC%9B%90%20%EC%9B%90%EC%A3%BC%EC%8B%9C%20%EB%B6%81%EC%9B%90%EB%A1%9C%20106%20%EA%B7%80%EB%9E%98%EB%A9%B4%EC%82%AC%EB%AC%B4%EC%86%8C&z=15&output=embed"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- 최종 마무리 섹션 -->
+    <section class="final-section">
+      <h2>미래를 향한 도약</h2>
+      <p>
+        안민규의 도전은 이제 시작입니다. 국민의힘 청년대표로서 강한 신념과
+        뜨거운 열정으로 무장한 그는, 강원도 원주시의 한 걸음에서부터 전국,
+        나아가 세계로 뻗어 나갈 위대한 변화를 이끌 것입니다.
+      </p>
+      <p>
+        그의 미래는 혁신과 도전, 그리고 확신으로 가득합니다. 오늘의 열정이
+        내일의 성공을 보장하며, 안민규의 리더십은 우리 모두에게 새로운 희망과
+        번영의 길을 열어줄 것입니다. 안민규의 도전을 응원해주세요
+      </p>
+      <p>그리고 가능하면 많은 민원을 넣어주세요!</p>
+    </section>
+  </body>
+</html>
